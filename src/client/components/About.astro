@@ -1,0 +1,51 @@
+---
+import ShimmerText from "../components/ShimmerText.astro";
+---
+
+<div class="justify-top flex flex-col border-gray-300 p-5 md:border-r md:p-10">
+  <h1 class="font-garamond text-left text-7xl font-light text-black">
+    Ayush Kulkarni
+  </h1>
+  <p
+    class="font-garamond max-w-xl pt-5 text-left text-xl font-light text-gray-900"
+  >
+    I am a student majoring in Computer Science at the <ShimmerText
+      duration="3s"
+      name="shimmer-text"
+      >University of Illinois at Urbana-Champaign</ShimmerText
+    >. My current interests focus on numerical multilinear algebra and data
+    analysis with machine learning. Beyond academics, I enjoy playing Table
+    Tennis. Feel free to reach out if you'd like to connect, collaborate on
+    research, or challenge me to a game of table tennis (fair warning, I don't
+    go easy)!
+  </p>
+  <p class="font-garamond pt-10 text-lg font-extralight">
+    <span class="font-pt-mono text-sm text-gray-400">EMAIL:</span> ayushk10[at]illinois.edu
+  </p>
+  <ul
+    class="font-garamond flex flex-row items-baseline gap-2 pt-3 text-lg font-extralight"
+  >
+    <span class="font-pt-mono text-sm text-gray-400">ELSEWHERE:</span>
+    <li>
+      <a href="https://github.com/ayush-kulkarni"
+        ><ShimmerText duration="1s" name="shimmer-text-hover"
+          ><span class="decoration-blue-500 decoration-2 hover:underline"
+            >github</span
+          ></ShimmerText
+        ></a
+      >
+    </li>
+    <li>
+      <p class="text-2xl font-normal text-gray-400">·</p>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/ayushk10"
+        ><ShimmerText duration="1s" name="shimmer-text-hover"
+          ><span class="decoration-blue-500 decoration-2 hover:underline"
+            >linkedin</span
+          ></ShimmerText
+        ></a
+      >
+    </li>
+  </ul>
+</div>

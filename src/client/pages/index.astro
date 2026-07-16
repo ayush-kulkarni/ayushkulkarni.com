@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import srcImage from "../assets/Profile_Pic.jpg";
+import { Image } from "astro:assets";
+import About from "../components/About.astro";
+---
+
+<Layout>
+  <div class="flex flex-col justify-center p-10 md:flex-row">
+    <About />
+    <div class="justify-center border-t border-gray-300 p-10 md:border-0">
+      <Image
+        src={srcImage}
+        alt="Ayush Kulkarni"
+        class="h-lg w-lg rounded-2xl"
+      />
+    </div>
+  </div>
+</Layout>

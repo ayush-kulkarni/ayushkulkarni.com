@@ -1,0 +1,7 @@
+---
+const { duration, name } = Astro.props;
+---
+
+<span class={name} style={`--shimmer-duration: ${duration}`}>
+  <slot />
+</span>
