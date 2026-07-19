@@ -3,19 +3,11 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import react from "@astrojs/react";
-
 // https://astro.build/config
 export default defineConfig({
-  srcDir: "./src/client",
+  srcDir: "./src",
 
   vite: {
     plugins: [tailwindcss()],
-  },
-
-  integrations: [react()],
-
-  redirects: {
-    "/404": "/",
-  },
+  }
 });
