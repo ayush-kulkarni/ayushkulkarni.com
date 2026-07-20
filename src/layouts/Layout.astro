@@ -1,6 +1,21 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Ayush Kulkarni",
+  description = "Ayush Kulkarni, majoring in CS at UIUC, is a researcher in tensor Kronecker eigenvectors, an ML enthusiast, and a builder of Turnip and fast web apps.",
+  image = "/og-image.jpg",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -24,7 +39,42 @@ import "../styles/global.css";
       rel="stylesheet"
     />
 
-    <title>Ayush Kulkarni</title>
+    <!-- For SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Ayush Kulkarni",
+        url: Astro.site,
+        image: ogImageURL,
+        jobTitle: "CS Student at UIUC",
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "University of Illinois Urbana-Champaign",
+        },
+        sameAs: [
+          "https://github.com/ayush-kulkarni",
+          "https://www.linkedin.com/in/ayushk10",
+        ],
+      })}
+    />
   </head>
   <body>
     <Navbar />
